@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <p class="header-note">Between 1 and 20</p>
+        <h1>Guess My Number</h1>
+        <button class="btn again">
+          Try
+          <span class="material-symbols-outlined replay"> replay </span>Again
+        </button>
+      </header>
+      <main id="main">
+        <div class="box1">
+          <input class="input" id="retrieve" type="number" />
+
+          <button class="btn check">
+            <span class="material-symbols-outlined search"> search </span>Check
+          </button>
+
+          <div id="secretbox" class="secret-number-box">
+            <span id="showNumber" class="secret-number">?</span>
+          </div>
+        </div>
+
+        <div class="box2">
+          <div class="score-box">
+            <p class="">
+              Score: <span id="startingscore" class="score">20</span>
+            </p>
+          </div>
+          <div class="msg-box">
+            <p class="message">Start Guessing.</p>
+          </div>
+          <p class="highscore-box">
+            Highscore: <span class="highscore">0</span>
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
