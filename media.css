@@ -1,142 +1,139 @@
-/* SECTION 1544PX */
-@media (max-width: 96.5em) {
-  html {
-    font-size: 52.25%;
+@media (max-width: 77.75em) {
+  .score {
+    padding-left: 15rem;
   }
-
-  header {
-    gap: 2.4rem;
-  }
-
-  main {
-    gap: 2rem;
-  }
-
-  .container {
-    height: 80vh;
+  .highscore {
+    padding-left: 4rem;
   }
 }
 
-/* SECTION 1400PX */
-@media (max-width: 87.5em) {
-  html {
-    font-size: 50%;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 4rem;
-  }
-
-  .btn {
-    font-size: 4.4rem;
-  }
-
-  .box1 {
-    column-gap: 2.2rem;
-  }
-  .box2 {
-    padding: 2rem 6rem;
-  }
-
-  .message {
-    font-size: 6.5rem;
-  }
-}
-
-/* SECTION 1040PX */
-@media (max-width: 65em) {
-  .container {
-    height: auto;
-  }
-
-  main {
-    max-width: 100%;
-    gap: 2rem;
-  }
-
-  .box2 {
-    width: 100%;
-  }
-
-  .score,
-  .highscore,
-  .message {
-    font-size: 5rem;
-  }
-}
-
-/* SECTION 900PX */
-@media (max-width: 56.25em) {
-  .container {
-    height: 100%;
-  }
-
-  .box2 {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    align-items: start;
-    justify-content: start;
-    gap: 0;
-  }
-  .msg-box {
-    grid-column: 1/3;
-    justify-self: start;
+@media (max-width: 77.75em) {
+  .retry {
     grid-row: 1/2;
   }
-  .score-box {
-    grid-column: 1/3;
 
-    justify-self: start;
-    grid-row: 2/3;
-  }
-  .highscore-box {
-    grid-column: 1/3;
-
-    justify-self: start;
-    grid-row: 3/4;
-  }
-}
-
-/* SECTION 544PX */
-@media (max-width: 34em) {
-  .header-note {
-    align-self: center;
+  input {
+    font-size: 2.4rem;
+    padding: 2.5rem;
     text-align: center;
   }
 
-  .btn {
-    align-self: center;
+  .message {
+    font-size: 5rem;
   }
 
-  .box1 {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 2.8rem;
+  .scores-section {
+    padding: 5rem;
+    justify-content: flex-end;
   }
-  .secret-number-box {
-    width: 80%;
-    border-radius: 50%;
-    margin-bottom: 3rem;
+
+  .score-box,
+  .highscore-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
   }
+
+  .score,
+  .highscore {
+    padding: 0;
+  }
+}
+
+@media (max-width: 63.75em) {
+  html {
+    font-size: 52.25%;
+  }
+}
+@media (max-width: 51.25em) {
+  html {
+    font-size: 48%;
+  }
+
+  .message {
+    font-size: 3.2rem;
+  }
+
+  body {
+    font-size: 3.2rem;
+  }
+
+  .header {
+    margin-bottom: 4rem;
+  }
+
+  .game-name {
+    font-size: 6rem;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    font-size: 3.2rem;
+    font-weight: 800;
+    gap: 1rem;
+    letter-spacing: 1.1px;
+  }
+
+  .icon {
+    font-size: 3.4rem;
+  }
+
+  input {
+    font-size: 3rem;
+  }
+
+  .score,
+  .highscore {
+    color: #3289f3;
+    font-size: 10rem;
+  }
+
+  .main {
+    padding: 5rem;
+  }
+
   .secret-number {
     font-size: 10rem;
   }
 
-  .box2 {
-    grid-template-rows: 2fr 1fr 1fr;
+  .container {
+    background: -webkit-linear-gradient(
+      to left,
+      #093028,
+      #237a57
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to left,
+      #093028,
+      #237a57
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
-  .msg-box {
-    margin-bottom: 5rem;
+  .ans-box {
+    gap: 1rem;
   }
-  .highscore-box {
-    justify-self: center;
+}
+
+@media (max-width: 31.25em) {
+  html {
+    font-size: 45%;
   }
-  .score-box {
-    justify-self: center;
+
+  .header {
+    margin-bottom: 8rem;
+  }
+
+  .main-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .main {
+    padding: 0;
+  }
+
+  .score,
+  .highscore {
+    font-size: 4.4rem;
   }
 }

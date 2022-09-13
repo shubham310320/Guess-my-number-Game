@@ -1,100 +1,79 @@
-"use strict";
-
 const check = document.querySelector(".check");
-const retry = document.querySelector(".again");
-const box1 = document.getElementById("main");
-const secretBox = document.getElementById("secretbox");
-const winNumberShown = document.getElementById("showNumber");
-const retrieve = document.getElementById("retrieve");
+const replay = document.querySelector(".retry");
+let input = document.getElementById("input");
 
-const score = function (x) {
-  document.querySelector(".score").textContent = x;
-};
-const highscore = function (x) {
-  document.querySelector(".highscore").textContent = x;
-};
-const message = function (x) {
+// THIS IS FUNCTIONS AREA
+function message(x) {
   document.querySelector(".message").textContent = x;
-};
-const secretNumber = function (x) {
+}
+
+function score(x) {
+  document.querySelector(".score").textContent = x;
+}
+
+function highscore(x) {
+  document.querySelector(".highscore").textContent = x;
+}
+
+function secret(x) {
   document.querySelector(".secret-number").textContent = x;
-};
+}
 
-// SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~THESE ARE THE STARTING CONDITIONS
-console.log();
+function checker() {
+  let value = Number(document.querySelector("input").value);
 
-const answer = Math.trunc(Math.random() * 21);
+  // SUBDIVISION WIN
+  if (value === guess) {
+    message("🎊🥳You Won!🥳🎊");
+    if (startScore > startHighscore) startHighscore = startScore;
+
+    highscore(startHighscore);
+
+    secret(guess);
+  } else if (!value) {
+    message("Please Guess Something");
+  }
+  // SUBDIVISION WRONG GUESS
+  else {
+    if (startScore > 1) {
+      value < guess ? message("Too Low") : message("Too High");
+      startScore--;
+      score(`${startScore}`);
+    } else {
+      score(0);
+      message("You Loser 😂🤣");
+      secret(guess);
+    }
+  }
+}
+
+// SECTION TODO STARTING
+const guess = Math.trunc(Math.random() * 20 + 1);
 let startScore = 20;
 let startHighscore = 0;
 
-console.log(answer);
+// SECTION CHECK
 
-// SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~THIS IS THE CHECK BUTTON LOGIC
+document.querySelector(".check").addEventListener("click", checker());
 
-check.addEventListener("click", function () {
-  let value = Number(retrieve.value);
-
-  // SUBPART This is the Winning situation
-
-  if (value === answer) {
-    message("You Guessed Right!🎊🎉🥳");
-    secretNumber(answer);
-    box1.style.backgroundColor = "#63dd6a";
-    secretBox.style.backgroundColor = "#63dd6a";
-    winNumberShown.style.color = "#268be4";
-
-    //SUBDIVISION this is the HIGHSCORE LOGIC
-    if (startScore > startHighscore) {
-      highscore(startScore);
-    }
-  } else if (!value) {
-    message("i have Brain, its Empty!😂");
-  } else {
-    value < answer ? message("guess High") : message("gassed High");
-
-    if (startScore > 1) {
-      startScore--;
-    }
-
-    // SUBPART This is the Losing situation situation
-    else {
-      startScore = 0;
-      message("Try again YOU LOSER");
-      box1.style.backgroundColor = "#e42626de";
-      secretNumber("REALLY");
-      secretBox.style.backgroundColor = "#e42626de";
-      secretBox.style.border = "none";
-      secretBox.style.width = "100%";
-      secretBox.style.borderRadius = "0";
-      secretBox.style.gridColumn = "1/-1";
-      secretBox.style.boxShadow = "none";
-
-      winNumberShown.style.fontSize = "10rem";
-      winNumberShown.style.color = "#63dd6a";
-    }
-    score(startScore);
+document.addEventListener("keypress", (x) => {
+  if (x.code === "Enter" || x.code === "NumpadEnter") {
+    checker();
   }
 });
 
-// SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~THIS IS THE AGAIN BUTTON LOGIC
+// SECTION RETRY
 
-retry.addEventListener("click", function () {
-  const answer = Math.trunc(Math.random() * 21);
-
+function playAgain() {
+  const guess = Math.trunc(Math.random() * 20 + 1);
   let startScore = 20;
-  score(startScore);
-  secretNumber("?");
-  box1.style.backgroundColor = "#268be49f";
-  secretBox.style.backgroundColor = "#268be4";
-  winNumberShown.style.color = "#63dd6a";
+  score(20);
+  message("Start Guessing");
+  secret("?");
+  input.innerText = "";
+}
 
-  secretBox.style.width = "20rem";
-  secretBox.style.borderRadius = "50%";
-  secretBox.style.gridColumn = "2 / span2";
-  secretBox.style.boxShadow = "inset 0 0 2rem #63dd69";
-  secretBox.style.boxShadow = "0 0 4rem rgba(0, 0, 0, 0.308)";
-
-  winNumberShown.style.fontSize = "12rem";
-
-  retrieve.value = retrieve.defaultValue;
+replay.addEventListener("click", playAgain());
+document.addEventListener("keypress", (x) => {
+  if (x.code === "KeyR") playAgain();
 });

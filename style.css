@@ -1,184 +1,184 @@
+/* THIS IS GENERAL STYLES*/
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 body {
   font-family: "Rampart One", cursive;
-  letter-spacing: 1.3px;
-  background-color: #268be49f;
+  font-size: 4.4rem;
+  font-weight: 400;
+  line-height: 1.4;
   color: #fff;
-  padding: 4rem;
+
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #0072ff,
+    #00c6ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #0072ff,
+    #00c6ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .container {
-  height: 90vh;
-  display: grid;
-  gap: 0;
-  border: 0.3rem solid #fff;
-  border-radius: 1.2rem;
+  /* margin: 5rem 5rem; */
+  border: 5px solid #fff;
+
   overflow: hidden;
-  box-shadow: 0 1.2rem 2rem rgba(0, 0, 0, 0.308);
+
+  padding: 1.5rem 3rem;
+
+  background: #093028; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #237a57,
+    #093028
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #237a57,
+    #093028
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-header {
-  background-color: #333;
-  width: 100%;
-  display: flex;
-  gap: 3.2rem;
-  align-items: flex-start;
-  justify-content: space-around;
-  margin: 0 auto;
-  border-bottom: 0.3px solid #fff;
-  box-shadow: 0 1.2rem 2rem rgba(0, 0, 0, 0.308);
-  padding: 3.2rem;
+.main-box {
+  column-gap: 5rem;
 }
 
-.header-note {
-  font-size: 3.2rem;
-  /* color: rgb(252, 252, 252); */
-}
-
-h1 {
-  font-size: 6.8rem;
-  text-align: center;
-  color: #268be4;
-  letter-spacing: 1.6px;
-  justify-self: flex-start;
-}
-
-.btn {
-  background-color: #333;
-  color: #ffffff;
-  font-size: 3rem;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  border: 0.3rem solid #fff;
-  border-radius: 0.9rem;
-  padding: 1rem 2rem;
-  cursor: pointer;
-}
-.replay {
-  font-size: 3.6rem;
-  font-weight: bolder;
-  color: #63dd6a;
-}
-
-/* SECTION --------MAIN BODY */
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8rem;
-}
-
-/* SECTION --------BOX1 */
-
-.box1 {
+/* SUBDIVISION GRID */
+.grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 2fr 1fr;
-  gap: 8rem;
-  padding-top: 4rem;
 }
 
+.col2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.col3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.row2 {
+  grid-template-rows: repeat(2, 1fr);
+}
+.row3 {
+  grid-template-rows: repeat(3, 1fr);
+}
+
+/* SUBDIVISION FLEX */
+.flex {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexd {
+  flex-direction: column;
+}
+
+/* SUBDIVISION BUTTONS */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 5rem;
+  background-color: rgba(51, 51, 51, 0.192);
+  color: #3289f3;
+  font-size: 4rem;
+  border: 1px solid #fff;
+  /* border-radius: 0.9rem; */
+}
+
+.icon {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #3289f3;
+}
+
+input {
+  font-family: inherit;
+  font-size: 5rem;
+  width: 25%;
+  background-color: #333;
+  color: #fff;
+  padding: 2.5rem 5rem;
+  justify-self: center;
+  align-self: center;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.input {
-  overflow: hidden;
-  padding: 0 6.5rem;
-  max-width: 20rem;
-  font-size: 5rem;
-  font-weight: 800;
-  font-family: "Rampart One", cursive;
-  box-shadow: 0 1.2rem 2rem rgba(0, 0, 0, 0.308);
 
-  grid-column: 1/3;
-  grid-row: 2/-1;
-  border: none;
-  border-radius: 0.9rem;
-}
+/* THIS IS STYLING PART */
 
-.check {
-  grid-column: 3/-1;
-  grid-row: 2/-1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 1.2rem 2rem rgba(0, 0, 0, 0.308);
-}
-.search {
-  font-size: 3.6rem;
-  font-weight: bolder;
-  color: #63dd6a;
-}
-
-.secret-number-box {
-  grid-column: 2 / span2;
-  max-width: 20rem;
+.message {
+  font-size: 8rem;
   text-align: center;
-  background-color: rgb(1, 114, 212);
-  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.308);
-  box-shadow: inset 0 0 2rem #63dd69;
-  padding: 1rem;
-  border-radius: 50%;
-}
-.secret-number {
-  font-size: 12rem;
-  font-weight: 400;
-  color: #63dd6a;
+  margin-bottom: 2rem;
 }
 
-/* SECTION --------BOX2 */
-.box2 {
-  padding: 2rem 12rem;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 6.4rem;
+/* SECTION HEADER */
+.header {
   align-items: start;
-  background-color: rgb(1, 114, 212);
+  justify-content: space-between;
+  margin-bottom: 9.6rem;
 }
 
-.score-box,
-.highscore-box,
-.msg-box {
-  letter-spacing: 1.8px;
-  font-weight: 500;
-  font-size: 3.8rem;
-}
-.score-box {
+.game-info {
+  grid-row: 1/-1;
   grid-column: 1/2;
 }
-.highscore-box {
-  grid-column: 8/-1;
-}
-.score,
-.highscore {
+
+.game-name {
   font-size: 8rem;
-  color: #63dd6a;
+  letter-spacing: 1.6px;
+
+  grid-column: 1/2;
 }
-.msg-box {
-  grid-column: 3 / 7;
-  text-align: center;
-}
-.highscore-box {
+
+.retry {
+  grid-column: 2/3;
   justify-self: end;
 }
 
-.message {
-  line-height: 1;
-  font-size: 8rem;
-  color: #63dd6a;
+/* SECTION MAIN */
+
+.main {
+  align-items: start;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem;
+}
+
+.secret-number {
+  font-size: 15rem;
+}
+
+/* SECTION FOOTER */
+
+.scores-section {
+  align-items: center;
+  justify-items: start;
+}
+
+.score,
+.highscore {
+  padding-left: 20rem;
+  font-size: 15rem;
+}
+.score {
+  padding-left: 28rem;
 }
